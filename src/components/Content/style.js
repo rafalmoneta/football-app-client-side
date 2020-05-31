@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentWrapper = styled.div`
   position: relative;
-  background-color: #F0F0F5;
+  background-color: #FFF;
   min-height: 100vh;
   padding-left: 100px;
 `

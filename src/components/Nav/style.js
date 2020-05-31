@@ -10,8 +10,8 @@ export const Navigation = styled.nav`
   align-items: center;
   min-height: 100vh;
   width: 100px;
-
-  background-color: red;
+  border-right: 1px solid #dadada;
+  background-color: #FFF;
 `
 
 export const NavItems = styled.ul`
@@ -25,20 +25,19 @@ export const NavItems = styled.ul`
 
 export const NavItem = styled.li`
   font-size: 0.8rem;
-  background-color: rgb(25, 25, 25);
   a {
-    color: white;
+    color: #191a1b;
     display: block;
     padding: 1rem 0;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    border-left: 5px solid transparent;
+    ${'' /* border-left: 5px solid transparent; */}
   }
   span {
     ${'' /* width: 20px;
     height: 20px; */}
     font-size: 1.5em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 ` 
