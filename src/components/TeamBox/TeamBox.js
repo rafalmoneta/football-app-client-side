@@ -3,9 +3,8 @@ import { TeamBoxContainer, TeamBoxImage, TeamBoxLink, TeamBoxButtons, TeamBoxBut
 import StarIcon from '../../Icons/Star';
 import TrashIcon from '../../Icons/Trash';
 
-const TeamBox = ({team}) => {
-
-  console.log(team)
+const TeamBox = ({team, handleDeleteTeam}) => {
+  
   return (
     <TeamBoxContainer>
       <div>
@@ -18,7 +17,7 @@ const TeamBox = ({team}) => {
           <TeamBoxButton>
             <StarIcon />
           </TeamBoxButton>
-          <TeamBoxButton>
+          <TeamBoxButton onClick={() => handleDeleteTeam(team.id)}>
             <TrashIcon />
           </TeamBoxButton>
         </TeamBoxButtons>

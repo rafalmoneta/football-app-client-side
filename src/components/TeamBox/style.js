@@ -6,7 +6,7 @@ export const TeamBoxContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #dadada;
+  border: 1px solid #efefef;
   border-radius: 0.75rem;
   box-sizing: border-box;
   text-align: center;

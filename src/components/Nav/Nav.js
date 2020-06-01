@@ -19,15 +19,15 @@ const Nav = () => {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/artists">
-            <span role="img" aria-label="emoji">⚽️</span>
-            <div>Top Artists</div>
+          <NavLink to="/">
+            <span role="img" aria-label="emoji">🏆</span>
+            <div>Ranking</div>
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/tracks">
-            <span role="img" aria-label="emoji">⚽️</span>
-            <div>Top Tracks</div>
+          <NavLink to="/admin">
+            <span role="img" aria-label="emoji">😎</span>
+            <div>Admin</div>
           </NavLink>
         </NavItem>
       </NavItems>

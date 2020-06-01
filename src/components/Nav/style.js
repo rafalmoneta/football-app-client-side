@@ -10,7 +10,7 @@ export const Navigation = styled.nav`
   align-items: center;
   min-height: 100vh;
   width: 100px;
-  border-right: 1px solid #dadada;
+  border-right: 1px solid #efefef;
   background-color: #FFF;
 `
 
