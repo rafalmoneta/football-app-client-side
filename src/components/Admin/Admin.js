@@ -14,7 +14,8 @@ const Admin = () => {
         <AdminLink to="">Players</AdminLink>
       </AdminNavigation>
       <AdminPanelContent>
-
+        
+        <Route exact path={`${path}/`}/>
         <Route path={`${path}/teams`} component={AdminTeams} />
         
       </AdminPanelContent>

@@ -14,7 +14,7 @@ export const TeamBoxContainer = styled.div`
 `
 
 export const TeamBoxImage = styled.div`
-  width: 13rem;
+  width: 8rem;
   height: auto;
   margin: 0 auto;
   img {

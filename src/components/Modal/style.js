@@ -40,12 +40,16 @@ export const ModalContainer = styled.div`
 
 export const ModalHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 2rem;
+
+  h2 {
+    margin: 0;
+  }
 `
 
 export const ModalContent = styled.div`
-  background-color: red;
+  
 `
 
 export const ModalCloseButton = styled.button`

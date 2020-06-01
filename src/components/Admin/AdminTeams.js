@@ -5,12 +5,14 @@ import useDeleteTeam from '../../Utilis/useDeleteTeam';
 import useQueryTeams from '../../Utilis/useQueryTeams';
 import PlusIcon from '../../Icons/Plus';
 import Modal from '../Modal/Modal';
+import NewTeam from '../NewTeam/NewTeam';
+import useAddTeam from '../../Utilis/useAddTeam';
 
 const AdminTeams = () => {
   const [isShowing, setIsShowing] = useState(false);
   const {data, loading, error} = useQueryTeams();
   const deleteTeam = useDeleteTeam();
-  
+  const addTeam = useAddTeam();
 
   const handleToggle = () => setIsShowing(!isShowing);
 
@@ -24,18 +26,23 @@ const AdminTeams = () => {
   }
 
   if(isShowing) {
-    return <Modal handleToggle={handleToggle}>Working</Modal> 
+    return (
+    <Modal header="New Team" handleToggle={handleToggle}>
+      <NewTeam handleToggle={handleToggle} onSubmit={addTeam} />
+    </Modal>) 
   }
 
   return (
     <AdminTeamsContainer>
-      {data.teams.map((team) => {
-        return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
-      })}
       <AddTeamButton onClick={handleToggle}>
         <PlusIcon />
         <span>Add Team</span>
       </AddTeamButton>
+
+      {data.teams.map((team) => {
+        return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
+      })}
+
     </AdminTeamsContainer>
   );
 }
