@@ -7,7 +7,6 @@ const TeamBox = ({team, handleDeleteTeam}) => {
   
   return (
     <TeamBoxContainer>
-      <div>
         <TeamBoxImage>
           <img src={team.imageURL} alt="team-logo" />
         </TeamBoxImage>
@@ -21,7 +20,6 @@ const TeamBox = ({team, handleDeleteTeam}) => {
             <TrashIcon />
           </TeamBoxButton>
         </TeamBoxButtons>
-      </div>
     </TeamBoxContainer>
   );
 }

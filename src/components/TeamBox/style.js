@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const TeamBoxContainer = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   padding: 1rem;
   border: 1px solid #efefef;
@@ -43,4 +44,8 @@ export const TeamBoxButton = styled.button`
   border-radius: 0.5rem;
   border: none;
   margin-right: 0.75rem;
+
+  &:last-child {
+    margin: 0;
+  }
 `
