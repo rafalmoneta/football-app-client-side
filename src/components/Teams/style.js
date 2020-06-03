@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TeamsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(20rem, 1fr));
+  grid-template-columns: repeat(4, minmax(16rem, 1fr));
   grid-gap: 1rem;
   width: 100%;
 `

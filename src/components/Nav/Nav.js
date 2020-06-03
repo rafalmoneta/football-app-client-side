@@ -19,6 +19,12 @@ const Nav = () => {
           </NavLink>
         </NavItem>
         <NavItem>
+          <NavLink to="/players">
+            <span role="img" aria-label="emoji">🙎‍♂️</span>
+            <div>Players</div>
+          </NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink to="/">
             <span role="img" aria-label="emoji">🏆</span>
             <div>Ranking</div>

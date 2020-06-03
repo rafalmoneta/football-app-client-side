@@ -5,6 +5,7 @@ import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
 import {ContentWrapper, ContentContainer} from './style';
 import Admin from '../Admin/Admin';
+import PlayersPage from '../PlayersPage/PlayersPage';
 
 const Content = () => {
   return (
@@ -14,6 +15,7 @@ const Content = () => {
         <Switch>
           <Route exact path='/' component={Home} /> 
           <Route path='/teams' component={Teams} />
+          <Route path='/players' component={PlayersPage} />
           <Route path='/admin' component={Admin} />
         </Switch>
       </ContentContainer>
