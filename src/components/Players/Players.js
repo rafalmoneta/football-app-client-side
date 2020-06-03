@@ -2,30 +2,30 @@ import React from 'react';
 import { PlayersContainer} from './style';
 import PlayerBox from '../PlayerBox/PlayerBox';
 import ButtonLove from '../Elements/ButtonLove/ButtonLove';
+import useQueryPlayers from '../../Utilis/useQueryPlayers';
 
 const Players = () => {
+  const {data, loading, error} = useQueryPlayers();
 
-  const players = [
-    {
-      name: 'Leo Messi',
-      number: 10,
-      position: 'RW',
-      bornAt: '1987-06-24',
-    },
-    {
-      name: 'Karim Benzema',
-      number: 10,
-      position: 'ST',
-      bornAt: '1987-06-24',
-    }
-  ]
+  if(loading) {
+    return <div>Loading...</div>
+  }
+
+  if(error) {
+    console.log(error);
+    return <div>Error...</div>
+  }
+
+  const test = (input) => {
+    console.log('something', input)
+  }
 
   return (
     <PlayersContainer>
-      {players.map((player) => {
+      {data.players.map((player) => {
         return (
           <PlayerBox player={player}>
-            <ButtonLove />
+            <ButtonLove onClick={() => test(player.name)}/>
           </PlayerBox>
         )
       })}

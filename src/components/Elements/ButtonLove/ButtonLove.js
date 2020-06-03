@@ -2,9 +2,9 @@ import React from 'react';
 import StarIcon from '../../../Icons/Star';
 import {LoveBtn} from './style';
 
-const ButtonLove = () => {
+const ButtonLove = ({onClick}) => {
   return (
-    <LoveBtn><StarIcon /></LoveBtn>
+    <LoveBtn onClick={onClick}><StarIcon /></LoveBtn>
   );
 }
  

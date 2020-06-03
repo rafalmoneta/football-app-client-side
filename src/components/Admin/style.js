@@ -39,27 +39,6 @@ export const AdminTeamsContainer = styled.div`
   width: 100%;
 `
 
-export const AddTeamButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0.75rem 3rem;
-  border-radius: 0.5rem;
-  background-color: transparent;
-  border: 1px solid #efefef;
-  font-size: 1.5rem;
-  cursor: pointer;
-
-  span {
-    display: block;
-    margin-top: 2rem;
-    color: #cecece;
-  }
-
-  svg {
-    color: #cecece;
-    width: 75px;
-    height: 75px;
-  }
+export const AdminPlayersContainer = styled(AdminTeamsContainer)`
+  grid-template-columns: repeat(4, minmax(20rem, 1fr));
 `

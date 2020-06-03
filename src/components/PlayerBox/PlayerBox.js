@@ -2,11 +2,14 @@ import React from 'react';
 import {Player, PlayerTop, PlayerImage, PlayerInfo, Label, PlayerBottom} from './style';
 
 const PlayerBox = ({ children ,player}) => {
+
+  const url = 'https://i.imgur.com/blWMP2K.png'
+
   return (
     <Player>
       <PlayerTop>
         <PlayerImage>
-          <img alt="player" src="https://i.imgur.com/QiiE9Dw.png"/>
+          <img alt="player" src={player.imageURL || url}/>
         </PlayerImage>
         <PlayerInfo>
           <Label>
