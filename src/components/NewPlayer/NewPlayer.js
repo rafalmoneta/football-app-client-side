@@ -4,26 +4,22 @@ import {NewPlayerWrapper, NewPlayerAddButton} from './style';
 import {positionOptions, customStyles} from './other';
 
 
+const NewPlayer = ({ handleToggle, teams ,onSubmit}) => {
+  const [player, setPlayer] = useState({name: '', teamId: 1, bornAt: '1990-09-19', position: 'GK', number: 1, imageURL: ''})
 
+  const teamOptions = teams.map((team) => {
+    return ({value: team.id, label: team.name});
+  });
 
-const NewPlayer = ({ teams ,onSubmit}) => {
-  const [player, setPlayer] = useState({name: '', team: 'FC Barcelona', bornAt: '1990-09-19', position: 'GK', number: 1, imageURL: ''})
-  
-  // const teamOptions = teams.map((team) => {
-  //   return ({value: team.id, label: team.name})
-  // })
-  // const team = teamOptions.find((option) => option.label === player.team)
-  const position = positionOptions.find((option) => option.value === player.position)
-
+  const team = teamOptions.find((option) => option.label === player.teamId);
+  const position = positionOptions.find((option) => option.value === player.position);
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("submiting", player);
-    // onSubmit({name: player.name, bornAt: player.bornAt, position: player.position, number: player.number, team: player.team, imageURL: player.imageURL})
-    setPlayer({name: '', team: 'FC Barcelona', bornAt: '1990-09-19', position: 'GK', number: 1, imageURL: ''})
-  }
-
-
+    onSubmit({name: player.name, bornAt: player.bornAt, position: player.position, number: player.number, teamId: player.teamId, imageURL: player.imageURL});
+    setPlayer({name: '', teamId: 1, bornAt: '1990-09-19', position: 'GK', number: 1, imageURL: ''});
+    handleToggle();
+  };
 
   return (
     <NewPlayerWrapper>
@@ -49,14 +45,14 @@ const NewPlayer = ({ teams ,onSubmit}) => {
           type="number"
           placeholder="Number"
           value={player.number}
-          onChange={e => setPlayer({...player, number: e.target.value})}
+          onChange={e => setPlayer({...player, number: parseInt(e.target.value)})}
         />
         <Select
           className="player-select"
-          // value={team}
-          // defaultValue={teamOptions[0]}
-          onChange={e => setPlayer({...player, team: e.value})}
-          // options={teamOptions}
+          value={team}
+          defaultValue={teamOptions[0]}
+          onChange={e => setPlayer({...player, teamId: e.value})}
+          options={teamOptions}
           styles={customStyles}
           required
         />

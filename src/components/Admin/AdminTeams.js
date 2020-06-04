@@ -25,21 +25,22 @@ const AdminTeams = () => {
     return <div>Error...</div>
   }
 
-  if(isShowing) {
-    return (
-    <Modal header="New Team" handleToggle={handleToggle}>
-      <NewTeam handleToggle={handleToggle} onSubmit={addTeam} />
-    </Modal>) 
-  }
-
   return (
-    <Grid>
-      <ButtonAdd onClick={handleToggle}/>
-      {data.teams.map((team) => {
-        return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
-      })}
+    <>
+      <Grid>
+        <ButtonAdd add="Team" onClick={handleToggle}/>
+        {data.teams.map((team) => {
+          return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
+        })}
+      </Grid>
+      
+      {isShowing && 
+        <Modal header="New Team" handleToggle={handleToggle}>
+          <NewTeam handleToggle={handleToggle} onSubmit={addTeam} />
+        </Modal>
+      }
+    </>
 
-    </Grid>
   );
 }
  

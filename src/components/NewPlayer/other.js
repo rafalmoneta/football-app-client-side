@@ -16,6 +16,10 @@ export const positionOptions = [
   {value: 'ST', label: 'Striker'}
 ]
 
+// export const teamOptions = teams.map((team) => {
+//   // return ({value: team.id, label: team.name})
+//   console.log(team);
+// })
 
 //styles for Select components
 export const customStyles = {

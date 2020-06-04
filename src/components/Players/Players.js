@@ -24,7 +24,7 @@ const Players = () => {
     <Grid>
       {data.players.map((player) => {
         return (
-          <PlayerBox player={player}>
+          <PlayerBox key={player.id} player={player}>
             <ButtonLove onClick={() => test(player.name)}/>
           </PlayerBox>
         )

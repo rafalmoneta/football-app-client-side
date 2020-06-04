@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import useQueryPlayers from '../../Utilis/useQueryPlayers';
 import PlayerBox from '../PlayerBox/PlayerBox';
 import ButtonDelete from '../Elements/ButtonDelete/ButtonDelete';
 import useDeletePlayer from '../../Utilis/useDeletePlayer';
@@ -7,10 +6,13 @@ import ButtonAdd from '../Elements/ButtonAdd/ButtonAdd';
 import Modal from '../Modal/Modal';
 import Grid from '../Elements/Grid/Grid';
 import NewPlayer from '../NewPlayer/NewPlayer';
+import useQueryPlayersAndTeams from '../../Utilis/useQueryPlayersAndTeams';
+import useAddPlayer from '../../Utilis/useAddPlayer';
 
 const AdminPlayers = () => {
-  const {data, loading, error} = useQueryPlayers();
+  const {data, loading, error} = useQueryPlayersAndTeams();
   const deletePlayer = useDeletePlayer();
+  const addPlayer = useAddPlayer();
   const [isShowing, setIsShowing] = useState(false);
 
   const handleToggle = () => setIsShowing(!isShowing);
@@ -24,25 +26,26 @@ const AdminPlayers = () => {
     return <div>Error...</div>
   }
 
-  if(isShowing) {
-    return (
-    <Modal header="New Player" handleToggle={handleToggle}>
-      <NewPlayer />
-    </Modal>) 
-  }
-
-
   return (
-    <Grid>
-      <ButtonAdd onClick={handleToggle} add={'player'} />
-      {data.players.map((player) => {
-        return (
-          <PlayerBox key={player.id} player={player}>
-            <ButtonDelete onClick={() => deletePlayer(player.id)}/>
-          </PlayerBox>
-        )
-      })}
-    </Grid>
+    <>
+      <Grid>
+        <ButtonAdd onClick={handleToggle} add={'player'} />
+        {data.players.map((player) => {
+          return (
+            <PlayerBox key={player.id} player={player}>
+              <ButtonDelete onClick={() => deletePlayer(player.id)}/>
+            </PlayerBox>
+          )
+        })}
+      </Grid>
+
+      {isShowing &&
+        <Modal header="New Player" handleToggle={handleToggle}>
+          <NewPlayer handleToggle={handleToggle} teams={data.teams} onSubmit={addPlayer}/>
+        </Modal>
+      }
+    </>
+    
   );
 }
  
