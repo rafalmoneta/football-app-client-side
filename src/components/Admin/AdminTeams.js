@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {AdminTeamsContainer} from './style';
 import TeamBox from '../TeamBox/TeamBox';
 import useDeleteTeam from '../../Utilis/useDeleteTeam';
 import useQueryTeams from '../../Utilis/useQueryTeams';
@@ -7,6 +6,7 @@ import Modal from '../Modal/Modal';
 import NewTeam from '../NewTeam/NewTeam';
 import useAddTeam from '../../Utilis/useAddTeam';
 import ButtonAdd from '../Elements/ButtonAdd/ButtonAdd';
+import Grid from '../Elements/Grid/Grid';
 
 const AdminTeams = () => {
   const [isShowing, setIsShowing] = useState(false);
@@ -33,13 +33,13 @@ const AdminTeams = () => {
   }
 
   return (
-    <AdminTeamsContainer>
+    <Grid>
       <ButtonAdd onClick={handleToggle}/>
       {data.teams.map((team) => {
         return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
       })}
 
-    </AdminTeamsContainer>
+    </Grid>
   );
 }
  

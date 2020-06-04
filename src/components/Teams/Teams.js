@@ -1,8 +1,8 @@
 import React from 'react';
-import {TeamsContainer} from './style';
 import TeamBox from '../TeamBox/TeamBox';
 import useDeleteTeam from '../../Utilis/useDeleteTeam';
 import useQueryTeams from '../../Utilis/useQueryTeams';
+import Grid from '../Elements/Grid/Grid';
 
 
 const Teams = () => {
@@ -19,12 +19,12 @@ const Teams = () => {
   }
 
   return (
-    <TeamsContainer>
+    <Grid>
       {data.teams.map((team) => {
         return <TeamBox key={team.id} team={team} handleDeleteTeam={deleteTeam}/>
       })}
       
-    </TeamsContainer>
+    </Grid>
   );
 }
  

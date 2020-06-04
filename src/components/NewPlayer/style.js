@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NewTeamWrapper = styled.div`
+export const NewPlayerWrapper = styled.div`
   padding: 2rem;
   background-color: blue;
   background: rgb(253, 253, 253);
@@ -24,13 +24,13 @@ export const NewTeamWrapper = styled.div`
     width: 100%;
     margin-right: 1rem;
     margin-top: 1rem;
-    &:nth-child(3) {
+    &:nth-child(4) {
       margin-right: 0;
-    }
+    };
   }
 `
 
-export const NewTeamAddButton = styled.button`
+export const NewPlayerAddButton = styled.button`
   flex-basis: 14rem;
   outline: none;
   border-radius: 0.5rem;
@@ -38,4 +38,5 @@ export const NewTeamAddButton = styled.button`
   font-size: 1rem;
   width: 100%;
   margin-top: 1rem;
+  padding: 1rem;
 `

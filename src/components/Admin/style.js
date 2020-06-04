@@ -31,14 +31,3 @@ export const AdminPanelContent = styled.div`
   display: block;
   margin-top: 2rem;
 `
-
-export const AdminTeamsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, minmax(20rem, 1fr));
-  grid-gap: 1rem;
-  width: 100%;
-`
-
-export const AdminPlayersContainer = styled(AdminTeamsContainer)`
-  grid-template-columns: repeat(4, minmax(20rem, 1fr));
-`

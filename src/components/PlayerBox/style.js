@@ -15,6 +15,7 @@ export const Player = styled.div`
 
 export const PlayerTop = styled.div`
   display: flex;
+  justify-content: space-between;
 `
 
 export const PlayerImage = styled.div`

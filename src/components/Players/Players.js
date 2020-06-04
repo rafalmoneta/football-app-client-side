@@ -1,8 +1,8 @@
 import React from 'react';
-import { PlayersContainer} from './style';
 import PlayerBox from '../PlayerBox/PlayerBox';
 import ButtonLove from '../Elements/ButtonLove/ButtonLove';
 import useQueryPlayers from '../../Utilis/useQueryPlayers';
+import Grid from '../Elements/Grid/Grid';
 
 const Players = () => {
   const {data, loading, error} = useQueryPlayers();
@@ -21,7 +21,7 @@ const Players = () => {
   }
 
   return (
-    <PlayersContainer>
+    <Grid>
       {data.players.map((player) => {
         return (
           <PlayerBox player={player}>
@@ -29,7 +29,7 @@ const Players = () => {
           </PlayerBox>
         )
       })}
-    </PlayersContainer>
+    </Grid>
   );
 }
  

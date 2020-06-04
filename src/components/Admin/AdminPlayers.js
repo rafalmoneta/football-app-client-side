@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import {AdminPlayersContainer} from './style';
 import useQueryPlayers from '../../Utilis/useQueryPlayers';
 import PlayerBox from '../PlayerBox/PlayerBox';
 import ButtonDelete from '../Elements/ButtonDelete/ButtonDelete';
 import useDeletePlayer from '../../Utilis/useDeletePlayer';
 import ButtonAdd from '../Elements/ButtonAdd/ButtonAdd';
 import Modal from '../Modal/Modal';
+import Grid from '../Elements/Grid/Grid';
+import NewPlayer from '../NewPlayer/NewPlayer';
 
 const AdminPlayers = () => {
   const {data, loading, error} = useQueryPlayers();
@@ -25,14 +26,14 @@ const AdminPlayers = () => {
 
   if(isShowing) {
     return (
-    <Modal header="New Team" handleToggle={handleToggle}>
-      hello
+    <Modal header="New Player" handleToggle={handleToggle}>
+      <NewPlayer />
     </Modal>) 
   }
 
 
   return (
-    <AdminPlayersContainer>
+    <Grid>
       <ButtonAdd onClick={handleToggle} add={'player'} />
       {data.players.map((player) => {
         return (
@@ -41,7 +42,7 @@ const AdminPlayers = () => {
           </PlayerBox>
         )
       })}
-    </AdminPlayersContainer>
+    </Grid>
   );
 }
  
