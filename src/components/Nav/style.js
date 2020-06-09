@@ -24,20 +24,26 @@ export const NavItems = styled.ul`
 `
 
 export const NavItem = styled.li`
+  margin-top: 1rem;
   font-size: 0.8rem;
   a {
     color: #191a1b;
     display: block;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     width: 100%;
     text-align: center;
     text-decoration: none;
-    ${'' /* border-left: 5px solid transparent; */}
+    border-left: 5px solid transparent;
+
+    &:hover {
+      border-left: 5px solid #623cea;
+      svg {
+        fill: #623cea;
+        opacity: 1;
+      }
+    }
   }
-  span {
-    ${'' /* width: 20px;
-    height: 20px; */}
-    font-size: 1.5em;
-    margin-bottom: 1rem;
+  svg {
+    opacity: 0.3;
   }
 ` 

@@ -1,0 +1,5 @@
+export { default as Cup } from './Cup'
+export { default as Football } from './Football'
+export { default as Person } from './Person'
+export { default as Settings } from './Settings'
+export { default as Team } from './Team'
