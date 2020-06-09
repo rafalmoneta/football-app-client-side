@@ -6,12 +6,14 @@ import Home from '../Home/Home';
 import {ContentWrapper, ContentContainer} from './style';
 import Admin from '../Admin/Admin';
 import PlayersPage from '../PlayersPage/PlayersPage';
+import Header from '../Header/Header';
 
 const Content = () => {
   return (
     <ContentWrapper>
       <ContentContainer>
         <Nav />
+        <Header />
         <Switch>
           <Route exact path='/' component={Home} /> 
           <Route path='/teams' component={Teams} />

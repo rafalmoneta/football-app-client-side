@@ -5,6 +5,7 @@ export const ContentWrapper = styled.div`
   background-color: #FFF;
   min-height: 100vh;
   padding-left: 100px;
+  padding-top: 80px;
 `
 
 export const ContentContainer = styled.main`
@@ -12,5 +13,4 @@ export const ContentContainer = styled.main`
     width: 100%;
     padding: 2rem;
     box-sizing: border-box;
-    ${'' /* background-color: rgb(24, 24, 24); */}
 `
