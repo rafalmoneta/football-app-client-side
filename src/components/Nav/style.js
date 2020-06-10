@@ -11,6 +11,7 @@ export const Navigation = styled.nav`
   min-height: 100vh;
   width: 100px;
   border-right: 1px solid #efefef;
+  ${'' /* border-right: 1px solid rgb(206,210,210); */}
   background-color: #FFF;
 `
 

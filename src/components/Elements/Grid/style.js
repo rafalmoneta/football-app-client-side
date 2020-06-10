@@ -5,4 +5,5 @@ export const GridFourElements = styled.div`
   grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
   grid-gap: 1rem;
   width: 100%;
+  padding: 2rem;
 `

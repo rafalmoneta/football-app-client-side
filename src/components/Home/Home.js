@@ -1,8 +1,15 @@
 import React from 'react';
+import { GridContainer, LeftContent, CenterContent, RightContent } from './style';
 
 const Home = () => {
   return (
-    <div>Home Page</div>
+    <div>
+      <GridContainer>
+        <LeftContent>Left</LeftContent>
+        <CenterContent>center</CenterContent>
+        <RightContent>right</RightContent>
+      </GridContainer>
+    </div>
   );
 }
  

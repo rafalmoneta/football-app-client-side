@@ -11,6 +11,5 @@ export const ContentWrapper = styled.div`
 export const ContentContainer = styled.main`
     min-height: 100vh;
     width: 100%;
-    padding: 2rem;
     box-sizing: border-box;
 `

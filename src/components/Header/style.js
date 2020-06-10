@@ -8,5 +8,5 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid rgb(239,239,239);
 `
